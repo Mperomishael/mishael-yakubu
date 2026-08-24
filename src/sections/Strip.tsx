@@ -1,4 +1,5 @@
 import { stripItems } from "../lib/data";
+import TappableImage from "../components/TappableImage";
 
 export default function Strip() {
   return (
@@ -10,13 +11,12 @@ export default function Strip() {
         <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
           {stripItems.map((s, i) => (
             <div key={i} className="group relative overflow-hidden bg-white" style={{ aspectRatio: "1/1" }}>
-              <img
+              <TappableImage
                 src={s.src}
                 alt={`${s.title} — Mishael Yakubu`}
-                loading="lazy"
-                className="w-full h-full object-cover"
+                caption={`${s.title} · ${s.sub}`}
               />
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <p className="text-white text-sm font-medium">{s.title}</p>
                 <p className="text-white/70 text-xs">{s.sub}</p>
               </div>
