@@ -1,4 +1,5 @@
 import { images, stats } from "../lib/data";
+import TappableImage from "../components/TappableImage";
 
 export default function Empire() {
   return (
@@ -28,7 +29,7 @@ export default function Empire() {
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="font-serif text-2xl sm:text-3xl text-[#191919]">{s.num}</div>
+                <div className="font-serif text-2xl sm:text-3xl text-lime">{s.num}</div>
                 <div className="mt-1 text-xs text-[#191919]/50">{s.label}</div>
               </div>
             ))}
@@ -37,19 +38,17 @@ export default function Empire() {
 
         <div className="relative">
           <div className="overflow-hidden bg-white" style={{ aspectRatio: "4/5" }}>
-            <img
+            <TappableImage
               src={images.empireMain}
               alt="Empire Digitals Worldwide — Mishael Yakubu digital agency"
-              loading="lazy"
-              className="w-full h-full object-cover"
+              caption="Empire Digitals Worldwide"
             />
           </div>
           <div className="hidden sm:block absolute -bottom-6 -left-6 w-1/2 overflow-hidden bg-white border-4 border-[#F4F3F3]" style={{ aspectRatio: "4/3" }}>
-            <img
+            <TappableImage
               src={images.empireAccent}
               alt="Mishael Yakubu at Empire Digitals Worldwide studio"
-              loading="lazy"
-              className="w-full h-full object-cover"
+              caption="Mishael Yakubu — studio"
             />
           </div>
         </div>
