@@ -7,6 +7,10 @@ export const siteConfig = {
   social: {
     whatsapp1: "https://wa.me/2348142656848",
     whatsapp2: "https://wa.me/2347086757575",
+    linkedin: "https://www.linkedin.com/in/mishael-yakubu-a70721430",
+    facebook: "https://www.facebook.com/share/17wbwFiXsG/",
+    youtube: "https://youtube.com/@mishaelautomation?si=RjHDB9B3m_krxOEV",
+    tiktok: "https://www.tiktok.com/@coachmishael?_r=1&_t=ZS-998zctRelFd",
   },
 };
 
