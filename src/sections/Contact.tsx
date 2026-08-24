@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "../lib/data";
+import SocialLinks from "../components/SocialLinks";
 
 const waText = encodeURIComponent(
   "Hi Mishael! I visited your portfolio and I'd love to discuss a project with Empire Digitals Worldwide."
@@ -45,6 +46,11 @@ export default function Contact() {
               </div>
             </div>
           </div>
+
+          <div className="mt-8">
+            <p className="text-xs uppercase tracking-[0.15em] text-[#191919]/50 mb-3">Follow</p>
+            <SocialLinks />
+          </div>
         </div>
 
         <div className="bg-[#191919] text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between">
@@ -61,25 +67,25 @@ export default function Contact() {
               href={`${siteConfig.social.whatsapp1}?text=${waText}`}
               target="_blank"
               rel="noopener"
-              className="group flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white/15 transition-colors duration-200"
+              className="group flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-lime/10 hover:border-lime/40 border border-transparent transition-colors duration-200"
             >
               <div>
                 <div className="text-sm font-medium">WhatsApp — Primary Line</div>
                 <div className="text-xs text-white/60">+234 814 265 6848</div>
               </div>
-              <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+              <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-lime group-hover:translate-x-0.5 transition-all duration-200" />
             </a>
             <a
               href={`${siteConfig.social.whatsapp2}?text=${waText}`}
               target="_blank"
               rel="noopener"
-              className="group flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-white/15 transition-colors duration-200"
+              className="group flex items-center justify-between px-5 py-4 bg-white/10 hover:bg-lime/10 hover:border-lime/40 border border-transparent transition-colors duration-200"
             >
               <div>
                 <div className="text-sm font-medium">WhatsApp — Secondary Line</div>
                 <div className="text-xs text-white/60">+234 708 675 7575</div>
               </div>
-              <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+              <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-lime group-hover:translate-x-0.5 transition-all duration-200" />
             </a>
           </div>
         </div>
