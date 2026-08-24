@@ -1,40 +1,45 @@
 import { images, siteConfig } from "../lib/data";
+import TappableImage from "../components/TappableImage";
+import { useScrollProgress } from "../hooks/useScrollProgress";
 
 export default function About() {
+  const { ref, progress } = useScrollProgress<HTMLDivElement>(0.95, 0.55);
+
   return (
     <section id="about" className="px-6 sm:px-10 md:px-14 py-20 sm:py-28 md:py-36">
-      <div className="max-w-6xl mx-auto">
+      <div
+        ref={ref}
+        className="max-w-6xl mx-auto"
+        style={{
+          opacity: 0.3 + progress * 0.7,
+          transform: `translateY(${(1 - progress) * 28}px)`,
+        }}
+      >
         <p className="text-[11px] uppercase tracking-[0.2em] text-[#191919]/50 font-medium">
           Who He Is
         </p>
 
         <div className="mt-8 grid gap-10 md:grid-cols-2 md:gap-16 items-start">
           <div className="grid grid-cols-2 gap-3 sm:gap-4">
-            <div
-              className="col-span-2 overflow-hidden bg-[#F4F3F3]"
-              style={{ aspectRatio: images.about1.aspect }}
-            >
-              <img
+            <div className="col-span-2 overflow-hidden bg-[#F4F3F3]" style={{ aspectRatio: images.about1.aspect }}>
+              <TappableImage
                 src={images.about1.src}
                 alt="Mishael Yakubu working at Empire Digitals Worldwide studio"
-                loading="lazy"
-                className="w-full h-full object-cover"
+                caption="Mishael Yakubu — Empire Digitals Worldwide studio"
               />
             </div>
             <div className="overflow-hidden bg-[#F4F3F3]" style={{ aspectRatio: images.about2.aspect }}>
-              <img
+              <TappableImage
                 src={images.about2.src}
                 alt="Mishael Yakubu coding session"
-                loading="lazy"
-                className="w-full h-full object-cover"
+                caption="Coding session"
               />
             </div>
             <div className="overflow-hidden bg-[#F4F3F3]" style={{ aspectRatio: images.about3.aspect }}>
-              <img
+              <TappableImage
                 src={images.about3.src}
                 alt="Mishael Yakubu tech coaching"
-                loading="lazy"
-                className="w-full h-full object-cover"
+                caption="Tech coaching"
               />
             </div>
           </div>
@@ -52,7 +57,7 @@ export default function About() {
                 creativity, code, and cutting-edge technology to craft
                 digital solutions that truly matter.
               </p>
-              <div className="border-l-2 border-[#191919]/15 pl-4 py-1 font-serif text-lg sm:text-xl text-[#191919]">
+              <div className="border-l-2 border-lime pl-4 py-1 font-serif text-lg sm:text-xl text-[#191919]">
                 "The future belongs to those who code it."
               </div>
               <p>
