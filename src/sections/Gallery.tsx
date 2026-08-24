@@ -1,4 +1,5 @@
 import { galleryItems } from "../lib/data";
+import TappableImage from "../components/TappableImage";
 
 export default function Gallery() {
   return (
@@ -12,20 +13,21 @@ export default function Gallery() {
         </h2>
         <p className="mt-4 max-w-lg text-sm md:text-[15px] text-[#191919]/70 leading-relaxed">
           A visual journey through the life and work of Mishael Yakubu —
-          developer, educator, entrepreneur.
+          developer, educator, entrepreneur. Tap any photo to view it full
+          screen.
         </p>
 
         <div className="mt-10 columns-2 md:columns-3 gap-3 sm:gap-4 [&>*]:mb-3 sm:[&>*]:mb-4">
           {galleryItems.map((g, i) => (
             <div key={i} className="group relative overflow-hidden bg-[#F4F3F3] break-inside-avoid">
-              <img
+              <TappableImage
                 src={g.src}
                 alt={`${g.title} — Mishael Yakubu Empire Digitals`}
-                loading="lazy"
+                caption={`${g.title} · ${g.sub}`}
                 style={{ aspectRatio: g.aspect }}
-                className="w-full object-cover"
+                imgClassName="w-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <p className="text-white text-sm font-medium">{g.title}</p>
                 <p className="text-white/70 text-xs">{g.sub}</p>
               </div>
