@@ -10,6 +10,14 @@ export default {
       colors: {
         ink: "#191919",
         panel: "#F4F3F3",
+        lime: {
+          DEFAULT: "#A6E22E",
+          soft: "#EFFCD6",
+        },
+      },
+      perspective: {
+        1000: "1000px",
+        1500: "1500px",
       },
     },
   },
