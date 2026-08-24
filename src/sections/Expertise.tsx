@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { expertiseList } from "../lib/data";
+import FlipCard from "../components/FlipCard";
 
 export default function Expertise() {
   return (
@@ -12,23 +13,27 @@ export default function Expertise() {
           What I master
         </h2>
 
-        <div className="mt-10 border-t border-gray-200">
-          {expertiseList.map((e) => (
-            <div
+        <div className="mt-10 grid sm:grid-cols-2 gap-4">
+          {expertiseList.map((e, i) => (
+            <FlipCard
               key={e.num}
-              className="group flex items-center justify-between gap-6 py-5 sm:py-6 border-b border-gray-200 hover:bg-[#F4F3F3] transition-colors duration-200 px-2 -mx-2 cursor-pointer"
-            >
-              <div className="flex items-baseline gap-4 sm:gap-8">
-                <span className="text-xs text-[#191919]/40 w-6">{e.num}</span>
-                <div>
-                  <div className="font-medium text-[#191919]">{e.title}</div>
-                  <div className="mt-1 text-sm text-[#191919]/70 leading-relaxed max-w-xl">
-                    {e.desc}
+              delay={(i % 2) * 0.1}
+              className="h-32"
+              front={
+                <div className="h-32 border border-gray-200 bg-white p-6 flex items-center justify-between">
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-xs text-[#191919]/40">{e.num}</span>
+                    <div className="font-medium text-[#191919]">{e.title}</div>
                   </div>
+                  <ArrowRight className="w-4 h-4 text-gray-400" />
                 </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-700 group-hover:translate-x-0.5 transition-all duration-200 shrink-0" />
-            </div>
+              }
+              back={
+                <div className="h-32 border border-lime bg-lime-soft p-6 flex items-center">
+                  <p className="text-sm text-[#191919]/80 leading-relaxed">{e.desc}</p>
+                </div>
+              }
+            />
           ))}
         </div>
       </div>
